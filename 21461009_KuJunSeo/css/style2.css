@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+    font-family: 'Roboto',sans-serif;
+    word-spacing: 0.5px;
+    letter-spacing: 0;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400; 
+    /* normal */
+}
+ol, ul {
+   list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+/* base */
+a{
+    text-decoration: none;
+    color: gray;
+}
+a:hover{
+    color: #222;
+}
+.blind{
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+/* content */
+.container{
+    overflow: hidden;
+    width: 100%;
+}
+/* 1024 - 12 1000 12 */
+.container .component{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 12px;
+    padding-left: 12px;
+    /* width 값이 다 더하면 1024 */
+}
+
+/* 1280 - 80 1160 80 */
+/* .container .component{
+    max-width: 1160px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 80px;
+    padding-left: 80px; */
+    /* width 값이 다 더하면 1280 */
+/* } */
+#header ul{
+    display: flex
+}
+#header li{
+    flex:1
+}article{
+    height: 400px;
+}
+article:nth-last-of-type(1){
+    background-color: #000;color
+}

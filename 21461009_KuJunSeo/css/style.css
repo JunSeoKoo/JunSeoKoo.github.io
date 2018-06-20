@@ -1,0 +1,948 @@
+/* 1. 기본 설정: 페이지 전체 */
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    
+    /* body{overflow:hidden;min-height:100vh;font-family:'Roboto', sans-serif}
+    ul,li{list-style:none}
+    a{text-decoration:none}
+    .btn-menu{display:block;position:relative;top:0;left:0;width:20px;height:20px;padding:15px;cursor:pointer;transition:background-color 180ms ease-in-out}
+    .btn-menu span{display:block;position:absolute;top:50%;width:calc(100% - 30px);height:0;border-bottom:1px solid #666;transform:translateY(-50%);transition:border-color 180ms ease-in-out}
+    .btn-menu span::before,.btn-menu span::after{content:'';display:block;position:absolute;top:0;width:100%;height:0;border-bottom:1px solid #666;transition:border-color 180ms ease-in-out}
+    .btn-menu span::before{transform:translateY(-8px)}
+    .btn-menu span::after{transform:translateY(8px)}
+    .btn-menu:hover{background-color:#222}
+    .btn-menu:hover span,.btn-menu:hover span::before,.btn-menu:hover span::after{border-color:#fff}
+    .side-menu{overflow-x:hidden;overflow-y:auto;position:fixed;top:0;left:0;width:250px;height:100vh;background-color:#fff;box-shadow:1px 0 2px rgba(0,0,0,0.15);transform:translateX(-100%);transition:transform 400ms ease-in-out}
+    .side-menu.open{transform:translateX(0)}
+    .side-menu ul{margin-top:70px;padding-left:40px}
+    .side-menu li{}
+    .side-menu li + li{padding-top:15px}
+    .side-menu li a{display:inlin-block;position:relative;vertical-align:top;color:#222;text-transform:uppercase;font-size:20px;font-weight:500;letter-spacing:0.5px;line-height:30px;opacity:0}
+    .side-menu li a::after{content:'';display:block;position:absolute;bottom:-2px;left:0;width:0;height:0;border-bottom:2px solid #222;transition:width 180ms ease-in-out}
+    .side-menu li a:hover::after{width:100%}
+    .side-menu .btn-close{display:block;position:absolute;top:0;right:0;width:20px;height:20px;padding:15px;cursor:pointer;transition:background-color 180ms ease-in-out, transform 250ms 400ms ease-in-out;transform:translateX(100%) rotate(45deg)}
+    .side-menu.open .btn-close{transform:translateX(0) rotate(0deg)}
+    .side-menu .btn-close span{overflow:hidden;display:block;position:relative;width:100%;height:100%}
+    .side-menu .btn-close span::before,.side-menu .btn-close span::after{content: '';position:absolute;height:1px;width:200%;top:50%;left:-50%;background-color:#222;transition:background-color 180ms ease-in-out}
+    .side-menu .btn-close span::before{-webkit-transform:translateY(-50%) rotate(45deg);-moz-transform:translateY(-50%) rotate(45deg);-ms-transform:translateY(-50%) rotate(45deg);-o-transform:translateY(-50%) rotate(45deg);transform:translateY(-50%) rotate(45deg)}
+    .side-menu .btn-close span::after{-webkit-transform:translateY(-50%) rotate(-45deg);-moz-transform:translateY(-50%) rotate(-45deg);-ms-transform:translateY(-50%) rotate(-45deg);-o-transform:translateY(-50%) rotate(-45deg);transform:translateY(-50%) rotate(-45deg)}    
+    .side-menu .btn-close:hover{background-color:#222}
+    .side-menu .btn-close:hover span::before,.side-menu .btn-close:hover span::after{background-color:#fff} 
+    .side-menu li.ani > a{opacity:1.0;animation:menuAni 250ms ease-in-out}
+    @keyframes menuAni{
+    0%{opacity:0}
+    100%{opacity:1.0}
+    } */
+
+*{
+    margin:0;
+    padding:0
+}
+body{
+    /* overflow: hidden; */
+    position: relative;
+    /* height: 100vh; */
+
+    /* 
+    %
+    vw - view width값
+    vh - view height값 100vh는 보이는곳까지 
+    
+    
+    */
+
+
+    font-family: sans-serif;
+    /* 바디 글꼴  */
+}
+
+
+/* end 기본 설정: 페이지 전체 */
+
+
+
+
+
+
+/* 2. menu */
+
+
+ul,li{
+    list-style:none
+}
+a{
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: black;
+    /* 폰트 색상 블랙 */
+}
+.btn-menu{
+    position:fixed;
+    z-index: 9;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    cursor: pointer;
+    /* 마우스 커서 올리면 손모양으로 */
+    display:  block;
+    box-sizing: border-box;
+    /* background-color: black; */
+    /* padding값을 포함하여 영역의 사이즈를 적용할 때 */
+    /* 패딩을 넣을때는 border-box(width height  패딩 포함)  width height 패딩을 넣지 않을때는 content-box  (패딩 포함히자 않음) */
+
+    transition: background-color 200ms ease-in-out;
+}
+.btn-menu:hover{
+    background-color: #222;
+}
+
+
+/* transition: background-color 200ms ease-in-out;
+}
+.btn-menu:hover{
+    background-color: #222;
+} 호버하면 색이 바뀜*/
+.btn-menu span{
+    display: block;
+    
+    top: 50%;
+    width:calc(100% - 30px);
+    /* calc 계산기 div 안에 흰색 soild가 가운데로감*/
+    
+    height: 0;
+    position: absolute;
+    border-bottom: 1px solid #222;
+    transform: translateY(-50%);
+    transition: border-color 200ms ease-in-out;
+}
+
+.btn-menu span::before,.btn-menu span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    right: 0;
+    border-bottom: 1px solid #222;
+    /* 문자열을 입력했을때 */
+
+    transition: border-color 200ms ease-in-out;
+}
+.btn-menu span::before{
+    transform: translateY(-8px);
+    /* 가운데 기준으로 위치가 -8px 밑으로 */
+}
+.btn-menu span::after{
+    transform: translateY(8px);
+    /* 가운데 기준으로 위치가 8px 위로*/
+}
+.btn-menu:hover span,
+.btn-menu:hover span::before,
+.btn-menu:hover span::after{
+    border-color: #fff;
+}
+/* 호버하면 보더 색이 바뀜 */
+
+.side-menu{
+    position: fixed;
+    
+    z-index: 1000;
+    /* 제일 위에 */
+    
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 106.2vh;
+    background-color: #fff;
+    box-shadow: 1px 0 2px rgba(0,0,0, 0.15);
+    /* 15퍼센트 */
+
+    transform: translateX(-100%);
+    /* 이거하면 메뉴 li가 사라짐 */
+    transition: 400ms ease-in-out; 
+    /* 0.4초 */
+}
+.side-menu.open{
+    transform: translateX(0);
+}
+.side-menu ul{
+    margin-top: 60px;
+    padding-left: 40px;
+}
+
+.side-menu li + li{
+    padding-top: 10px;
+}
+.side-menu li a{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    /* inline-block을하면 꼭넣어줘야함 */
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+
+    opacity: 0.0;
+    color: #f00;
+    /* 초기값 */
+}
+.side-menu li.ani a{
+    opacity: 1.0;
+    color: #222;
+    
+    
+    animation: menu 250ms ease-in-out;
+    /* 자바끝나고 나서한거 */
+    /* 아무 효과없었는데 밑에 클래스 하나 더지정함 */
+}
+@keyframes menu{
+    0%{
+        opacity: 0.0;
+        color: #f00;
+    }
+    40%{
+        color: #f00;
+    }
+    100%{
+        opacity: 1.0;
+        color: #222;
+    }
+}
+.side-menu li a::before{
+    /* after로해도됨 */
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 2px solid #222;
+    transition: width 200ms ease-in-out,
+    border-color 300ms ease-in;
+}
+.side-menu li a:hover::before{
+    width: 100%;
+    border-color: #7158AF;
+    /* border-bottom-width: 1px; 이거하면 처음에 얇아졌다가 끝나면 굵어짐 */
+}
+.btn-close{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: background-color 200ms ease-in-out
+}
+.btn-close:hover{
+    background-color: #222;
+}
+.btn-close span{
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+    /* 도는각도 */
+    transition: transform /* 250ms */380ms ease-in-out;
+
+    /* 축악형
+    2개 축약 transition: 속성(all , 스타일 속성) 속도(ms,s)               :-가속도 linear
+    3개 축약 transition: 속성 속도(ms,s) -가속도        :- 딜레이 0
+    4개 축약 transition: 속성 속도(ms,s) 딜레이(ms,s) -가속도
+
+    multiple. (2개 이상의 속성을 넣을때) */
+}
+.btn-close span::before,.btn-close span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #222;
+    transition: background-color 200ms ease-in-out
+    /* transform-origin: translateX(-50%) translateY(-50%); */
+}
+.side-menu.open .btn-close span{
+    transform: rotate(0deg);
+    transition: transform 200ms 180ms ease-in-out;
+}
+.btn-close:hover span::before{
+     background-color: #fff;
+}
+.btn-close:hover span::after{
+    background-color: #fff;
+}
+
+
+.btn-close span::before{
+    transform:translateX(-50%) translateY(-50%) rotate(45deg)
+}
+.btn-close span::after{
+    transform:translateX(-50%) translateY(-50%) rotate(135deg)
+}
+/* .btn-close span::before{
+    transform: rotate(45deg)
+}
+.btn-close span::after{
+    transform: rotate(135deg)
+} */
+/* x로 모양이됨 */
+
+/* end menu */
+
+
+#page1{
+    margin-top: 0;
+    position: relative;
+    /* width: 100vh; */
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#page1_title{
+    position: absolute;
+    left: 1470px;
+    top: 0;
+}
+#sub_title{
+    position: absolute;
+    left: 1400px;
+    top: 350px;
+}
+#logo{
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+#page1 h2,p{
+    color: #fff;
+   
+}
+#page1 a{
+    color: #fff;
+}
+#page1 a:hover{
+    color: #3a53c9;
+}
+#page1 h2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 400px;
+    font-size: 35px;
+    text-shadow:1px 1px 1px #262626;
+}
+#page1 p{
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%);
+    top: 390px;
+    font-size: 28px;
+    text-shadow:1px 1px 1px #262626;
+    font-weight: 400;
+    
+}
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+#page1 span{
+    font-family: 'Nanum Pen Script', serif;
+    color: #3a53c9;
+    text-shadow:1px 1px 1px #fff;
+    font-size: 80px;
+}
+
+/* BUTTON */
+
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 0.4em 1.5em;
+  position: absolute;
+  text-transform: uppercase;
+  top: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing:4px;
+  text-shadow:1px 1px 1px #262626;
+}
+
+button::before,
+button::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+
+  z-index: -1;
+}
+
+button:hover {
+  color: #3a53c9;
+}
+
+.btn-1::after {
+  height: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* 버튼안에 색상 */
+}
+
+.btn-1:hover:after {
+  height: 100%;
+}
+
+/* end BUTTON */
+
+
+/* end page1 */
+
+
+/* page2 */
+
+
+
+  #page2{
+    position: relative;
+    height: 80vh;
+    margin-top: 200px;
+}
+#train{
+    position: absolute;
+    left: 20%;
+    top: 60px;
+}
+#ktx{
+    position: absolute;
+    top: 540px;
+}
+#page2 h2{
+    position: absolute;
+    left: 55%;
+    top: 120px;
+    
+}
+#page2 h3{
+    position: absolute;
+    left: 55%;
+    top: 200px;
+    line-height: 50px;
+}
+#page2 span{
+    font-family: 'Nanum Pen Script', serif;
+    font-size: 50px;
+    color: #3a53c9;
+}
+
+
+/* end page2 */
+
+
+/* page2_5 */
+
+#page2_5{
+    overflow: hidden;
+    padding-left: 140px;
+    padding-right: 140px;
+    
+    /* width: 100%; */
+    height: 40vh;
+    /* background-color: #ffffff; */
+    
+    /* border-right:solid 300px #7158AF; */
+      
+      position: relative;
+}
+
+#color_box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 20px;
+    width: 50%;
+    margin-top: 200px;
+    height: 40%;
+}
+/* icon */
+@media (min-width: 768px){ 
+    /* 768보다 크면 다 pc 768보다 내려가면 실행됨 */
+    .conB{
+        
+      /* margin-top: 250px; */
+      padding: 30px;
+    }    
+    .conB .container{
+            display: flex;
+            max-width: 1000px;
+                
+                /* -webkit-flex-direction: ; */
+                -moz-flex-direction:row;
+                -ms-flex-direction: row;
+                -o-flex-direction:row;
+                flex-direction: row; 
+            /* 1000px보다 멀어지면 더 늘어나지 않음 */
+            margin-left: auto;
+            margin-right: auto;
+            /* 가운데 정렬 */
+        }
+        .conB .text{
+            flex: 1;
+        }
+    }
+    .conB .icon{
+        display: inline-block;
+        width: 2em; 
+        /* 2배0 */
+        font-size: 60px;
+        margin-bottom: 20px;
+        line-height: 2em;
+        /* 세로 두배 */
+        border-radius: 50%;
+        text-align: center;
+        background-color: #6fa6c4;
+        color: #fff;
+    }
+    .conB .icon:hover{
+        opacity: 1;
+        transform: scale(1.15);
+        transition: all 1s ease;
+        /* background: url(./images/cafa.png); */
+    }
+    .conB .text{
+        padding-left: 20px;
+        padding-right: 20px;
+        /* padding-bottom: 60px; */
+        text-align: center;
+    }
+    .conB h2{
+        margin-top: 0px;
+        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
+        font-size: 30px;
+        color: #ffa726;
+       
+    }
+    .p2{
+        color: #fff;
+        margin-top: 8px;
+    }
+    .conB a:hover{
+        text-decoration: underline;
+       
+    }
+   
+  /* end icon */
+/* end page2_5 */
+
+
+#page2_5_5{
+    position: relative;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+}
+#page2_5_5 img{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    color: #ffa726;
+    transform: translateX(-50%);
+}
+#page2_5_5 h2{
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    color: #ffa726;
+    transform: translateX(-50%);
+}
+#player1{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#page2_5_5 p{
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    color: #ffa726;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
+#page2_5_5 h2:hover, p:hover{
+    color: #ffa726;
+    cursor:pointer;
+}
+
+/* page3 */
+#page3{
+    /* width: 100vh; */
+    height: 70vh;
+    padding: 100px;
+    /* border-left:solid 140px  rgba(255, 167, 38, 0.8);
+    border-right:solid 140px  rgba(255, 167, 38, 0.8); */
+}
+
+/* 이미지 갤러리 */
+#page3 h2{
+    text-align: center;
+    color: #ffa726;
+    margin-bottom: 50px;
+}
+
+.gallery{
+    
+    width: 100%; /*가로 사이즈 100%*/
+    height: 50%;
+    max-width: 1200px; /*요소의 최대 너비 지정*/
+    min-height: 100px;/*상 하 이미지 사이 마진*/
+    margin: 0 auto; /*중앙 정렬*/
+    padding: 0px; /*전체 패딩 0px 지정*/
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .gallery-item{
+    width: 300px; /*가로 200px 지정*/
+    height: 300px; /*세로 200px 지정*/
+    margin: 30px;/*전체 마진 10px*/
+    background: #000; /*배경 색*/
+    position: relative; /*relative */
+    cursor: pointer; /*마우스 커서*/
+    overflow: hidden; /*텍스트 넘치지 않게*/
+  }
+  
+  .gallery-item-image{
+    position: absolute; /*absolute*/
+    width: 100%; /*가로 사이즈 100% 지정*/
+    height: 100%; /*세로 사이즈 100% 지정*/
+    background: lightblue; /*배경 색 지정*/
+    z-index:20; /*레이어 순서 지정*/
+    -webkit-transition:all .5s ease;
+    transition: all .5s ease; /*0.5초 움직임*/
+    bottom:0; /*하단 0*/
+    overflow: hidden; /*넘침 방지*/
+  }
+  
+  .gallery-item:hover .gallery-item-image{
+    bottom: 46.5px; /*하단 올라오는 정도*/
+  }
+  
+  #gallery-item-description{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #353125;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+  #gallery-item-description1{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #c39770;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+  #gallery-item-description2{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #f1ddb8;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+  #gallery-item-description3{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #7d9f86;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+  #gallery-item-description4{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #436451;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+  #gallery-item-description5{
+    color:white; /*지정 색*/
+    font-size: 1rem; /*폰트 사이즈 지정*/
+    width: 100%; /*가로 100%*/
+    height: 30px; /*세로 40px*/
+    padding: .5rem .8rem; /*패딩 지정*/
+    background: #caaba6;/* 배경 색 지정*/
+    position: absolute; /*absolute*/
+    bottom:0;
+  }
+
+
+/* end 갤러리 */
+
+#page4{
+    position: relative;
+    height: 80vh;
+ 
+    padding-top: 250px;
+    padding-left: 160px;
+    display: flex;
+}
+
+#page4con{
+    position: relative;
+    padding: 50px;
+    left: 25%;
+    height: 70%;
+    width: 35%;
+    box-shadow: 8px 8px 8px #ffa726;
+    background:rgba(11, 25, 45, 0.9);
+    display: flex;
+    margin-right: 150px;
+}
+
+#page4 p{
+    color: #ffa726;
+    
+}
+#Korail{
+    position: absolute;
+    left: 50px;
+    top: 110px;
+    font-size: 30px;
+}
+#sum{
+    margin-left: 20px;
+    position: absolute;
+    left: 170px;
+    top: 230px;
+    font-size: 13px; 
+}
+ul{
+    list-style: none;
+}
+
+ul li .fab{
+    font-size: 15px;
+    color: white;
+    float: right;
+    /* 오른쪽 정렬 */
+    margin-right: 15px;
+    
+}
+ul li .fas{
+    font-size: 50px;
+    color: #ffa726;
+    margin-right: 15px; 
+}
+#page4con:hover{
+    background: rgba(255, 167, 38, .8);
+    color: #fff;
+    box-shadow: 8px 8px 8px rgba(11, 25, 45, 0.9);
+}
+#page4con:hover>ul li .fas{
+    color: #fff;
+}
+#page4con:hover>p{
+    color: #fff;
+}
+#page4con:hover>#set{
+    background:rgba(11, 25, 45, 0.9);
+    color: #ffa726;
+}
+#page4con:hover>#set2{
+    background:rgba(11, 25, 45, 0.9);
+    color: #ffa726;
+}
+#page4con:hover>#set3{
+    background:rgba(11, 25, 45, 0.9);
+    color: #ffa726;
+}
+#page4con:hover>#set1{
+    background:rgba(11, 25, 45, 0.9);
+    color: #ffa726;
+}
+
+#bu{
+    position: absolute;
+    top: 350px;
+    left: 270px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: none;
+    background-color: #ffa726;
+}
+#page4 a{
+    color: #fff;
+}
+#page4 a:hover{
+    color: #ffa726;
+}
+#page4 select{
+    cursor: pointer;
+}
+
+#set1{
+    margin-left: 20px;
+    background:rgba(255, 167, 38, .8);
+    color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    left: 170px;
+    top: 180px;
+}
+#set{
+    margin-left: 20px;
+    background:rgba(255, 167, 38, .8);
+    color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    left: 450px;
+    top: 180px;
+}
+#set2{
+    margin-left: 20px;
+    margin-top: 70px;
+    background:rgba(255, 167, 38, .8);
+    color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    left: 170px;
+    top: 220px;
+}#set3{
+    margin-left: 20px;
+    margin-top: 70px;
+    background:rgba(255, 167, 38, .8);
+    color: #fff;
+    position: absolute;
+    border-radius: 5px;
+    left: 375px;
+    top: 220px;
+}
+#page5con{
+    
+    position: relative;
+    padding: 50px;
+    height: 70%;
+    width: 35%;
+    box-shadow: 8px 8px 8px #ffa726;
+    background:rgba(11, 25, 45, 0.9);
+    /* display: flex; */
+    display: none;
+}
+#page5con:hover{
+    background: rgba(255, 167, 38, .8);
+    color: #fff;
+    box-shadow: 8px 8px 8px rgba(11, 25, 45, 0.9);
+}
+#page5con:hover>#pi{
+    color: #fff;
+    
+}
+#pi{
+    position: absolute;
+    top: 200px;
+    left: 110px;;
+    line-height: 27px;
+}
+/* 페럴렉스 */
+.parallax-window {
+    min-height: 700px;
+    background: transparent;
+}
+#page5con:hover>ul li .fas{
+    color: #fff;
+}
+#page5con:hover>p{
+    color: #fff;
+}
+
+/* 페럴렉스 */
+
+#page5{
+    position: relative;
+    height: 130vh;
+    /* width: 100%; */
+    /* padding-top: 100px; */
+    border-left:solid 200px  rgba(255, 167, 38, 0.8);
+    border-right:solid 200px  rgba(255, 167, 38, 0.8);
+    /* border-bottom:solid 140px  rgba(255, 167, 38, 0.8); */
+}
+#page5 h2{
+    position: absolute;
+    margin-top: 100px;
+    left: 50%;
+    color: #ffa726;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 40px;
+}
+#page5 img{
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translateX(-50%);
+}
+
+
+/* footer */
+
+.footer{
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom:30px;
+    text-align:center;
+    color: #262626;
+    
+  }
+  .footer img{
+      margin-top: 50px;
+  }
+  /* end footer */
