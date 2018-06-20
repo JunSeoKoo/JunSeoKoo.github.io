@@ -3,10 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>오늘도 "내일로" 청춘</title>
+    <link rel="stylesheet" href="./css/style.css">
     
-    <title>블로그 테스트</title>
+    <!-- tap image -->
+    
+    <link rel="shortcut icon" href="./img/pop.png"> 
+
+    <!-- end tap image -->
+
+    <!--image slide -->
+    <link rel="stylesheet" type="text/css" href="./out/sid/demo.css" />
+    <link rel="stylesheet" type="text/css" href="./out/sid/backgroundTransition.css" />
+    <!--end image slide -->
+    
+    <!-- fade in-out   -->
+    <link rel="stylesheet" href="out/animate.css-master/animate.css-master/animate.css">
+    <!-- end fade in-out   -->
+
+    <!-- icon -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+    <!-- end icon -->
+    </style>
 </head>
 <body>
-    <h1>블로그 테스트</h1>
+
+<!-- wrap -->
+<div id="wrap">  
+
+    <!-- menu -->
+    <c href="javascript:doDisplay();"><b id="btn-menu" class="btn-menu"><span></span></b></c>
+        <div id="side-menu" class="side-menu" >
+          <ul>
+            <li><a href="#menu1"onclick="j_test(0)">Home</a></li>
+            <li><a href="#menu2"onclick="j_test(1)">내일로 소개</a></li>
+            <li><a href="#menu3"onclick="j_test(2)">소개 영상</a></li>
+            <li><a href="#menu3"onclick="j_test(3)">특징</a></li>
+            <li><a href="#menu4"onclick="j_test(4)">열차 정보</a></li>
+            <li><a href="#menu5"onclick="j_test(5)">예매하기</a></li>
+            <li><a href="#menu6"onclick="j_test(6)">노선도</a></li>
+          </ul>
+          <b id="btn-close" class="btn-close"><span></span></b>
+        </div>
+    <!-- end menu  -->
+
+
+    <!-- content -->
+        
+        <!-- menu1 -->
+
+        <div id="page1" class="backgroundTransition about">
+            <a href="http://www.letskorail.com/" target="blank"><img id="logo" src="./img/Logo.png" onmouseover="this.src='./img/Logo_hover.png';" onmouseout="this.src='./img/Logo.png';" alt="logo"></a>
+            <img id="page1_title" src="./img/menu1img.png" alt="title">
+            <img id="sub_title" src="./img/menu1title.png" width="118px" height="300px" alt="">
+            <h2>한번뿐인 <span>청춘</span> 바로 지금 이순간입니다.</h2>
+            <p>오늘도 내일로</p>
+            <button class="btn-1"><a href="#page4">예매하기</a></button>
+        </div>
+        <!-- end menu1 -->
+        
+        <!-- menu2 -->
+        <div id="page2" class="about">
+                <img id="train" class="wow fadeInUp" data-wow-duration="2s" src="./img/train.png" alt="소개">
+                <h2 class="wow fadeInUp" data-wow-delay="1s" data-wow-duration="2s"><span>"내일로"</span>  란 무엇인가요?</h2>
+                <h3 class="wow fadeInUp" data-wow-delay="1.5s"data-wow-duration="2s" >내일로 패스란 만 25세 이하 청년들이 패스 한 장으로 일정기간동안<br>
+                    해당열차를 무제한 이용하며 여행할 수 있는 상품입니다.</h3>
+                    <img id="ktx" class="wow fadeInLeft" data-wow-delay="1.7s" data-wow-duration="2.5s" src="./img/Old_KTX-II.png" alt="KTX">
+        </div>
+        
+                    
+        
+        
+        <!-- end menu2 -->
+        <div id="page2_5_5" class="about">
+             <h2 class="wow fadeIn"data-wow-delay="1s" data-wow-duration="2s">영상으로 내일로를 만나보세요</h2>
+            <div id="player1" class="wow fadeIn"data-wow-delay="2s" data-wow-duration="2s"></div>
+            <p class="wow fadeIn"data-wow-delay="1s" data-wow-duration="2s">내일로의 시작 1편 '일반패스편' - 국토교통부</p>
+
+        </div>
+        
+        <div id="page2_5" class="parallax-window about" data-parallax="scroll" data-image-src="./img/old.jpg">
+               <div id="color_box" class=" wow fadeIn" data-wow-duration="3s">           
+                <section class="conB">
+                <div class="container">
+                <div class="text"><a href="#page3">
+                <span class="fas fa-subway icon wow fadeInUp" data-wow-delay="1.5s" data-wow-duration="1.5s"></span></a>
+                <h2 class=" wow fadeInDown" data-wow-delay="2s">Train</h2>
+                <p class=" wow fadeIn"data-wow-delay="2s">연간 이용자</p>
+                <p class="p2 wow fadeInUp"data-wow-delay="2s" id="counter1"></p>
+                </div>
+                
+            
+            
+            
+                <div class="text"><a href="#page5">
+                <span class="fas fa-ticket-alt icon  wow fadeInUp" data-wow-delay="1.75s" data-wow-duration="1.5s"></span></a>
+                <h2 class=" wow fadeInDown" data-wow-delay="2.25s">Ticket </h2>
+                <p class=" wow fadeIn"data-wow-delay="2.25s">관광 혜택지</p>
+                <p class="p2 wow fadeInUp"data-wow-delay="2.25s" id="counter2"></p>
+                </div>
+            
+    
+                <div class="text"><a href="#page5">
+                <span class="fas fa-map-marker-alt icon  wow fadeInUp" data-wow-delay="2s" data-wow-duration="1.5s"></span></a>
+                <h2 class=" wow fadeInDown" data-wow-delay="2.5s">Route</h2>
+                <p class=" wow fadeIn"data-wow-delay="2.5s">정차역</p>
+                <p class="p2 wow fadeInUp"data-wow-delay="2.5s" id="counter3"></p>
+                </div>
+                </div>
+                </section>
+            </div> 
+            </div>
+        
+        <!-- menu3 -->
+
+        
+        <div  id="page3" class=" about" >
+            <h2 class="wow fadeInUp" data-wow-duration="1.5s">열차 정보</h2>
+            <br>
+                <div class="gallery">
+                        <!--앨범1-->
+                        <div class="gallery-item wow fadeInDown" data-wow-delay="1s" data-wow-duration="2.5s">
+        
+                            <div class="gallery-item-image">
+                                    <img src="./img/itx_1.png" width="300px" height="300px" alt="ITX - 청춘">
+                            </div>
+                            <div id="gallery-item-description">
+                                <h3>ITX - 청춘</h3>
+                            </div>
+                        </div>
+        
+                        <!--앨범2-->
+                        <div class="gallery-item wow fadeInDown" data-wow-delay="1s" data-wow-duration="2.5s">
+                            <div class="gallery-item-image">
+                                    <img src="./img/itx_2.png" width="300px" height="300px" alt="ITX - 새마을">
+                            </div>
+                            <div id="gallery-item-description1">
+                                <h3>ITX - 새마을</h3>
+                            </div>
+                        </div>
+        
+                        <!--앨범3-->
+                        <div class="gallery-item wow fadeInDown" data-wow-delay="1s" data-wow-duration="2.5s">
+                            <div class="gallery-item-image">
+                                    <img src="./img/korea.png" width="300px" height="300px" alt="무궁화호">
+                            </div>
+                            <div id="gallery-item-description2">
+                                <h3>무궁화호</h3><span>
+                            </div>
+                        </div>
+    
+                        <!--앨범4-->
+                        <div class="gallery-item wow fadeInUp" data-wow-delay="1.5s" data-wow-duration="2.5s">
+                            <div class="gallery-item-image">
+                                    <img src="./img/new.png" width="300px" height="300px" alt="새마을호">
+                            </div>
+                            <div id="gallery-item-description3">
+                                <h3>새마을호</h3>
+                            </div>
+                        </div>
+                        
+                        <!--앨범5-->
+                    <div class="gallery-item wow fadeInUp" data-wow-delay="1.5s" data-wow-duration="2.5s">
+                        <div class="gallery-item-image">
+                                <img src="./img/no.png" width="300px" height="300px" alt="누리로">
+                        </div>
+                        <div id="gallery-item-description4">
+                            <h3>누리로</h3>
+                        </div>
+                    </div>
+                    
+                    <!--앨범6-->
+                    <div class="gallery-item wow fadeInUp" data-wow-delay="1.5s" data-wow-duration="2.5s">
+                        <div class="gallery-item-image">
+                                <img src="./img/big.png" width="300px" height="300px" alt="통근열차">
+                        </div>
+                        <div id="gallery-item-description5">
+                            <h3>통근열차</h3>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+        <!-- end menu3 -->
+
+
+
+        <!-- menu4 -->
+
+        <div id="page4" class=" about" >
+            
+                <div id="page4con" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration="2s">
+                    <ul id="icon1">
+                        <li><i class="fas fa-ticket-alt wow fadeInUp"data-wow-delay="2s" data-wow-duration="2s"></i></li>
+                    </ul>
+                    <p id="Korail" class="wow fadeInUp"data-wow-delay="2s" data-wow-duration="2s">KORAIL</p>
+                    <select id="set1" class="wow fadeInUp"data-wow-delay="2.5s" data-wow-duration="2s" style="height:25px; width:250px;"> 
+                    <option value="내일로" selected>할인권 선택</option>
+                    <option value="내일로">코레일 할인</option>
+                    <option value="내일로">카드 할인</option>
+                    </select>
+                    <p id="sum" class="wow fadeInUp"data-wow-delay="2.7s" data-wow-duration="2s">이용대상 : 만 25세 이하 내 , 외국인 <br>*단 18년도 하계 시즌에 한하여 만 29세 이하 이용가능</p>
+                    <select id="set" class="wow fadeInUp"data-wow-delay="2.5s" data-wow-duration="2s" style="height:25px;"> 
+                    <option value="내일로" selected>권종 선택</option>
+                    <option value="내일로">3일권 (50,000원)</option>
+                    <option value="내일로">5일권 (60,000원)</option>
+                    </select>
+                    <p></p>
+                    <select id="set2" class="wow fadeInUp"data-wow-delay="2.9s" data-wow-duration="2s" style="height:25px; width:200px;"> 
+                    <option value="내일로" selected>2018-06-21</option>
+                    <option value="내일로">--원하는 날짜를 눌러주세요--</option>
+                    <option value="내일로">달력보기</option>
+                    </select>
+
+                    <select id="set3" class="wow fadeInUp"data-wow-delay="2.9s" data-wow-duration="2s" style="height:25px; width:200px;"> 
+                    <option value="내일로" selected>2018-06-24</option>
+                    <option value="내일로">--원하는 날짜를 눌러주세요--</option>
+                    <option value="내일로">달력보기</option>
+                    </select>
+                    <button id="bu" class="btn-1 wow fadeIn"data-wow-delay="3.1s" data-wow-duration="2s"><a href="javascript:doDisplay();">예매하기</a></button>
+                </div>
+
+                <div id="page5con">
+                    <ul id="icon1">
+                        <li><i class="fas fa-ticket-alt"></i></li>
+                    </ul>
+                    <p id="Korail">KORAIL</p>
+                    <p id="pi">읽어주세요! <br><br>
+                        주의사항 : 차내에서 승무원이 신분증 및 티켓을 확인합니다.<br>
+                        종이 승차권은 분실 시 재 발매하지 않습니다.<br><br>
+                        이용조건 : 구매한 내일로패스의 이용기간동안<br> 열차의 입석 또는 자유석 무제한 이용가능<br><br>
+                        좌석지정 시 할인 혜택 : KTX 좌석 매진 시 입석 또는 자유석 운임의<br>
+                        60% 할인 된 가격으로 이용가능  
+                    </p>
+                    
+                </div>
+            
+        </div>
+        <!-- end menu4 -->
+
+        <!-- menu5 -->
+
+        <div id="page5" class="wow fadeIn about">
+            <h2 class="wow fadeIn" data-wow-delay="1.5s">내일로 노선도<br>
+            <sub>자신이 가고 싶은 곳으로 떠날 수 있습니다.</sub></h2>
+            <img class="wow fadeIn" data-wow-delay="2s" data-wow-duration="2s" src="./img/map.png" alt="map">
+        </div>
+        <!-- end menu5 -->
+
+       <!-- footer -->
+      <footer class="footer wow fadeInUp">
+            
+            <h3>&copy; Interaction Programming.내일로</h3>
+            <img class="wow fadeInUp"  data-wow-delay="1s" data-wow-duration="1.5s" src="./img/kaywon.png" alt="kaywon">
+        </footer>
+        
+        <!--end  footer -->
+
+
+                
+
+</div>
+<!-- end wrap -->
+
+<!-- image slide  -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+<!-- end image slide  -->
+
+<!-- fade-in out wow js-->
+<script src="out/WOW-master/WOW-master/dist/wow.min.js"></script>
+<!--end fade-in out wow js-->
+
+
+
+<!-- 페럴렉스 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="./out/fa/parallax.js"></script>
+<script type="text/javascript" src="./out/sid/backgroundTransition.js"></script>
+    <script src="./js/javascriopt.js"></script>
 </body>
 </html>
